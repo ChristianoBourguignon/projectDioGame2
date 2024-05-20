@@ -25,32 +25,48 @@
 // Ao final deve se exibir uma mensagem:
 // "O Herói tem de saldo de **{saldoVitorias}** está no nível de **{nivel}**"
 
-function setRank(name,wins){
+function setRank(name, wins, defeat){
     hero.name = name;
-    if (wins <= 10){
-        hero.rank = "Ferro";
-    } else if (wins <= 20){
-        hero.rank = "Bronze";
-    } else if (twnds <= 50){
-        hero.rank = "Prata";
-    } else if (wins <= 80){
-        hero.rank = "Ouro";
-    } else if (wins <= 90){
-        hero.rank = "Diamente";
-    } else if (wins <= 100){
-        hero.rank = "Lendário";
-    } else if (wins >= 101){
-        hero.rank = "Imortal";
+    let qtndWins = wins - defeat;
+    hero.totalWins = qtndWins;
+    if (qtndWins <= 10){
+        return "Ferro";
+    } else if (qtndWins <= 20){
+        return "Bronze";
+    } else if (qtndWins <= 50){
+        return "Prata";
+    } else if (qtndWins <= 80){
+        return "Ouro";
+    } else if (qtndWins <= 90){
+        return "Diamente";
+    } else if (qtndWins <= 100){
+        return "Lendário";
+    } else if (qtndWins >= 101){
+        return "Imortal";
     }
 }
 
 const hero = {
     name: "",
-    qtndWins: 2,
-    qtndDefeat: 1,
+    qtndWins: 0,
+    qtndDefeat: 0,
+    totalWins: 0,
     rank: "",
 }
 
-let totalWins = hero.qtndWins - hero.qtndDefeat;
-setRank("Christiano",totalWins);
-console.log(`O Herói ${hero.name} tem de saldo de ${totalWins} está no nível de ${hero.rank}`)
+/* 
+poderia incluir todas as mudanças diretamente na função, mas pesquisei sobre vi que era uma má prática :(, então evitei ao máximo, mas para desenvolver diversos testes, daria mais trabalho eu deixar desfragmentado as propriedades do objeto.
+
+Exemplo de como eu usaria na forma de boa prática
+
+hero.name = "Christiano"
+hero.wins = wins;
+hero.defeat = defeat;
+hero.totalWins = wins-defeat;
+hero.rank = setRank(hero.totalWins); // nesse caso mudaria os paramentos da função, é claro!
+console.log(`O Herói ${hero.name} tem o saldo de vitórias de: ${hero.totalWins} e está no nível de ${hero.rank}`)
+
+*/
+
+hero.rank = setRank("Christiano",11,1)
+console.log(`O Herói ${hero.name} tem o saldo de vitórias de: ${hero.totalWins} e está no nível de ${hero.rank}`)
