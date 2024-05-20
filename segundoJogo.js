@@ -68,5 +68,30 @@ console.log(`O Herói ${hero.name} tem o saldo de vitórias de: ${hero.totalWins
 
 */
 
-hero.rank = setRank("Christiano",11,1)
+//Ferro
+hero.rank = setRank("Felipe",11,1)
+console.log(`O Herói ${hero.name} tem o saldo de vitórias de: ${hero.totalWins} e está no nível de ${hero.rank}`)
+
+//Bronze
+hero.rank = setRank("Pedro",21,1)
+console.log(`O Herói ${hero.name} tem o saldo de vitórias de: ${hero.totalWins} e está no nível de ${hero.rank}`)
+
+//Prata
+hero.rank = setRank("Patrick",51,1)
+console.log(`O Herói ${hero.name} tem o saldo de vitórias de: ${hero.totalWins} e está no nível de ${hero.rank}`)
+
+//Ouro
+hero.rank = setRank("Matheus",81,1)
+console.log(`O Herói ${hero.name} tem o saldo de vitórias de: ${hero.totalWins} e está no nível de ${hero.rank}`)
+
+//Diamante
+hero.rank = setRank("Hyorran",91,1)
+console.log(`O Herói ${hero.name} tem o saldo de vitórias de: ${hero.totalWins} e está no nível de ${hero.rank}`)
+
+//Lendário
+hero.rank = setRank("Gabriel",101,1)
+console.log(`O Herói ${hero.name} tem o saldo de vitórias de: ${hero.totalWins} e está no nível de ${hero.rank}`)
+
+//Imortal
+hero.rank = setRank("Christiano",101,0)
 console.log(`O Herói ${hero.name} tem o saldo de vitórias de: ${hero.totalWins} e está no nível de ${hero.rank}`)
