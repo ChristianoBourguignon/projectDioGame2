@@ -8,3 +8,6 @@
   - Variáveis
   - Operadores
   - Estrutura de decisões
+  - Objetos
+  - Funções
+- Boa prática
